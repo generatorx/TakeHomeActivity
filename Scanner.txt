@@ -1,0 +1,83 @@
+/*
+ * Submitted by: Butad, Paul John, A.
+ * Class Section: ERTB
+ * Number of characters on lastname: 5
+ * Method use for inputs: Scanner
+ * Method use for conditions: Switch
+ */
+package takehome01;
+import java.util.Scanner;
+
+public class TakeHome01 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        double num1, num2, answer;
+      
+        String operator;
+    
+        System.out.println("PROGRAM MAIN MENU");
+        System.out.println("------------------------------ \n");
+        System.out.println("[A]ddition");
+        System.out.println("[S]ubtraction");
+        System.out.println("[M]ultiplication");
+        System.out.println("[D]ivision \n");
+        
+        System.out.print("Select an option: ");
+        operator = sc.next();
+        
+        switch(operator) {
+        case "A":
+        System.out.print("\nEnter 1st number: ");
+        num1 = sc.nextDouble();
+        System.out.print("Enter 2nd number: ");
+        num2 = sc.nextDouble();
+        answer = num1 + num2;
+        System.out.println("\nYou entered " + num1 + " and " + num2);
+        System.out.println("The sum of two input numbers is " + answer);
+        break;
+        
+        case "S":
+        System.out.print("\nEnter 1st number: ");
+        num1 = sc.nextDouble();
+        System.out.print("Enter 2nd number: ");
+        num2 = sc.nextDouble();
+        answer = num1 - num2;
+        System.out.println("\nYou entered " + num1 + " and " + num2);
+        System.out.println("The difference between the two input is " + answer);       
+        break;
+        
+        case "M":
+        System.out.print("\nEnter 1st number: ");
+        num1 = sc.nextDouble();
+        System.out.print("Enter 2nd number: ");
+        num2 = sc.nextDouble();
+        answer = num1 * num2;
+        System.out.println("\nYou entered " + num1 + " and " + num2);
+        System.out.println("The product of two input numbers is " + answer);         
+        break;
+        
+        case "D":
+        System.out.print("\nEnter 1st number: ");
+        num1 = sc.nextDouble();
+        System.out.print("Enter 2nd number: ");
+        num2 = sc.nextDouble();
+  
+        if (num1 < num2) {
+        System.out.println("\nYou entered " + num1 + " and " + num2);
+        System.out.println("The quotient of two input numbers is " + num1 + " / " + num2);
+        } else {
+        answer = num1 / num2;
+        System.out.println("\nYou entered " + num1 + " and " + num2);
+        System.out.println("The quotient of two input numbers is " + answer);
+        }
+        break;
+        
+        default: 
+            System.out.println("The letter should be in uppercase or you typed an invalid character");
+        }
+   
+    } 
+    
+}
