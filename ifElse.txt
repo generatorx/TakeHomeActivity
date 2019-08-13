@@ -2,18 +2,19 @@
  * Submitted by: Butad, Paul John, A.
  * Class Section: ERTB
  * Number of characters on lastname: 5
- * Method use for inputs: Scanner
- * Method use for conditions: Switch
+ * Method use for inputs: Buffered Reader
+ * Method use for conditions: If-Else
  */
 package takehome01;
-import java.util.Scanner;
+import java.io.*;
 
 public class TakeHome01 {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws Exception {
+        BufferedReader sc = new BufferedReader (new InputStreamReader(System.in));
         
-        double num1, num2, answer;
+        String num1, num2;
+        double Num1, Num2, answer;
       
         String operator;
     
@@ -25,47 +26,59 @@ public class TakeHome01 {
         System.out.println("[D]ivision \n");
         
         System.out.print("Select an option: ");
-        operator = sc.next();
-        
-        
+        operator = sc.readLine();
+                
         if (operator.equals("A")) {
         System.out.print("\nEnter 1st number: ");
-        num1 = sc.nextDouble();
+        num1 = sc.readLine();
+        Num1 = Double.parseDouble(num1);
         System.out.print("Enter 2nd number: ");
-        num2 = sc.nextDouble();
-        answer = num1 + num2;
-        System.out.println("\nYou entered " + num1 + " and " + num2);
+        num2 = sc.readLine();
+        Num2 = Double.parseDouble(num2);
+        answer = Num1 + Num2;
+        System.out.println("\nYou entered " + Num1 + " and " + Num2);
         System.out.println("The sum of two input numbers is " + answer);
+        
         } else if (operator.equals("S")) {
         System.out.print("\nEnter 1st number: ");
-        num1 = sc.nextDouble();
+        num1 = sc.readLine();
+        Num1 = Double.parseDouble(num1);
         System.out.print("Enter 2nd number: ");
-        num2 = sc.nextDouble();
-        answer = num1 - num2;
-        System.out.println("\nYou entered " + num1 + " and " + num2);
-        System.out.println("The difference between the two input is " + answer);  
+        num2 = sc.readLine();
+        Num2 = Double.parseDouble(num2);
+        answer = Num1 - Num2;
+        System.out.println("\nYou entered " + Num1 + " and " + Num2);
+        System.out.println("The difference between the two input numbers is " + answer);
+        
         } else if (operator.equals("M")) {
         System.out.print("\nEnter 1st number: ");
-        num1 = sc.nextDouble();
+        num1 = sc.readLine();
+        Num1 = Double.parseDouble(num1);
         System.out.print("Enter 2nd number: ");
-        num2 = sc.nextDouble();
-        answer = num1 * num2;
-        System.out.println("\nYou entered " + num1 + " and " + num2);
-        System.out.println("The product of two input numbers is " + answer); 
+        num2 = sc.readLine();
+        Num2 = Double.parseDouble(num2);
+        answer = Num1 * Num2;
+        System.out.println("\nYou entered " + Num1 + " and " + Num2);
+        System.out.println("The product of two input numbers is " + answer);
+        
         } else if (operator.equals("D")) {
         System.out.print("\nEnter 1st number: ");
-        num1 = sc.nextDouble();
+        num1 = sc.readLine();
+        Num1 = Double.parseDouble(num1);
         System.out.print("Enter 2nd number: ");
-        num2 = sc.nextDouble();
-        if (num1 < num2) {
-        System.out.println("\nYou entered " + num1 + " and " + num2);
-        System.out.println("The quotient of two input numbers is " + num1 + " / " + num2);
+        num2 = sc.readLine();
+        Num2 = Double.parseDouble(num2);
+        
+        if (Num1 < Num2) {
+        System.out.println("\nYou entered " + Num1 + " and " + Num2);
+        System.out.println("The quotient of two input numbers is " + Num1 + " / " + Num2);
         } else {
-        answer = num1 / num2;
+        answer = Num1 / Num2;
         System.out.println("\nYou entered " + num1 + " and " + num2);
         System.out.println("The quotient of two input numbers is " + answer);   
         }    
         }
+        
         else {
         System.out.println("The letter should be in uppercase or you typed an invalid character");
         }
